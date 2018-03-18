@@ -1,0 +1,86 @@
+
+/* Remove the navbar's default margin-bottom and rounded borders */ 
+.navbar {
+  margin-bottom: 5px;
+}
+nav.navbar.navbar-inverse {
+  background-image: linear-gradient(to bottom,#29156F 0,#29156F 100%);
+  background-color: #29156F;
+  border-color: #29156F;
+  border-radius: 0;
+} 
+.navbar-inverse .navbar-brand {
+    color: #fff;
+}
+.breadcrumb { /*breadcrumb overwrite property*/
+    padding-left: 15px;
+    margin: 0;
+    list-style: none;
+    background-color: #fff;
+    border-radius: 0;
+}
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {
+   	height: 600px;
+}
+/* Set gray background color and 100% height */
+.sidenav { /* sidenav overwrite property */
+  	padding-left: 25px ! important;
+   	background-color: #f1f1f1;      	
+   	height: 100%;
+}
+.sidenav li, li a {
+		text-decoration: none;
+		font-size: medium;		
+		color: #333;		
+}
+.list-height li a {
+    font-height: 40px;
+}
+.sidenav li:hover > a {
+  	text-decoration: none;
+		background-color: #e3e3e3;				
+		color: #333;
+}    	
+.sidenav ul li > span {
+		color: orange;		
+}
+.sidenav-style-off li {
+  	list-style: none;
+}        
+.list-events {
+    list-style-type: none;
+    padding-left: 18px;    
+}
+.list-events span {
+    background-color: #fff;
+    border: 1px solid #f1f1f1; 
+    border-radius: 4px;    
+}
+.select-ramal {
+    width: 100%;
+    height: 60px; 
+    overflow-y: auto; 
+    padding-left: 2px; 
+    border: 0;
+} 
+footer {
+    width: 100%;        
+    height: 60px;     
+    background-color: #555;
+    color: white;
+    padding-top: 20px;
+} 
+
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+    .sidenav {
+        height: auto;
+        padding: 15px;
+    }
+    .row.content {
+        height:auto;
+    } 
+}
+ 

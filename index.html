@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="intranet">
+<head>	
+	<title>Insurance Company</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">  
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>  
+	<script src="js/main.js"></script>
+	<script src="js/controllers/fotos-controller.js"></script>
+	<script src="js/controllers/ramais-controller.js"></script>
+</head>
+<body>
+	
+	<nav class="navbar navbar-inverse"> <!-- Begin Navbar -->
+		<div class="container-fluid">
+	    	<div class="navbar-header">
+	      		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>                        
+	      		</button>
+	      		<a class="navbar-brand" href="#">Insurance Company</a>
+	    	</div>
+		    <div class="collapse navbar-collapse" id="myNavbar">
+			    <ul class="nav navbar-nav">
+			    	<li><a href="index.html">Home</a></li>
+			        <li><a href="#">Institucional</a></li>
+			        <li><a href="#">Sistemas</a></li>
+			        <li><a href="#">Organograma</a></li>
+			        <li><a href="ramais.html">Ramais</a></li>
+			    </ul>			    
+		    </div>
+	  	</div>
+	</nav> <!-- End Navbar -->
+    	
+  	<ol class="breadcrumb">	<!-- Breadcrumb -->  		
+		Você está em: <li class="active">Home</li>
+	</ol>
+
+	<div class="container-fluid">    
+	  	<div class="row content">
+	    	<div class="col-sm-3 sidenav">
+				<div class="row"> <!-- Begin Acesso Rápido -->                                                                      					
+					<div class="col-sm-12 sidenav list-height">
+			    		<h3><span class="glyphicon glyphicon-cloud"></span>&nbsp;&nbsp;Acesso Rápido</h3>
+			      		<ul>
+				      		<li><a href="#">Sistema ERP</a></li>
+				      		<li><a href="#">Portal de Vendas</a></li>
+				      		<li><a href="#">Site Institucional</a></li>
+				      		<li><a href="#">Portal do Segurado</a></li>
+				      		<li><a href="#">RH Online</a></li>
+				      		<li><a href="#">Webmail</a></li>
+				      	</ul>	
+				    </div>
+				</div> <!-- End Acesso Rápido -->      	
+
+	            <div class="row"> <!-- Begin Eventos -->                                                                            	            	
+	            	<div class="col-sm-12 sidenav">
+	            		<h3><span class="glyphicon glyphicon-calendar"></span>&nbsp;&nbsp;Eventos</h3>
+				    	<ul class="list-events">
+					    	<li><span>25/01</span> Exames médicos</li>	
+					    	<li><span>28/01</span> Treinamento Susep</li>
+					    	<li><span>30/01</span> Bolo aniversariantes</li>	     		
+					    </ul>
+	            	</div>	            	
+	            </div> <!-- End Eventos -->                                                         
+
+	            <div class="row"> <!-- Begin Help-Desk -->                                                                   	            	
+	            	<div class="col-sm-12 sidenav" id="help-desk">
+	            		<h3><span class="glyphicon glyphicon-wrench"></span>&nbsp;&nbsp;Help-Desk</h3>
+	            		<p><a href="#">Clique aqui</a> para solicitar suporte.	
+	            	</div>	            	
+	            </div> <!-- End Help-Desk -->
+
+		  	</div>
+		    
+		    <div class="col-sm-6 text-left">  	    	
+		    	<h3><span class="glyphicon glyphicon-pushpin"></span>&nbsp;&nbsp;Eventos & Comunicados</h3>            
+			    <div class="media"> <!-- Begin Eventos & Comunicados -->
+	                <div class="media-left media-top">
+	                    <img class="media-object" src="img/news/files.jpg" alt="Imagem de um homem com papeis nas mãos" />
+	                </div>
+	                <div class="media-body">
+	                    <h4 class="media-heading">Reorganize seu Dados</h4>
+	                    <p style="text-align: justify;">Estudos recentes indicam que apenas 7% dos dados armazenados é realmente relevante para o usuário. O crescimento exponencial dos dados e seu armazenamento não estruturado é um problema. Uma grande porcentagem dos dados armazenados é ultrapassada e quase nunca mais acessada.</p>	                    
+	                    <a href="https://technet.microsoft.com/pt-br/library/hh987046.aspx" target="_blank"><span>Leia mais</span></a>
+	                </div>                         
+	            </div> <!-- End Eventos & Comunicados -->
+
+		    	<hr>		    
+
+			    <div class="row" ng-controller="FotosController"> <!-- Begin Angular FotosController -->
+	            	<div class="col-sm-3" ng-repeat="foto in fotos"> 
+	                    <div class="thumbnail">
+	                        <img src="{{ foto.url }}" alt="Imagem de um escritorio">
+	                    </div>
+	                    <div class="caption">
+	                    	<h4>{{ foto.titulo }}</h4>
+	                        <p>{{ foto.txt }}</p>
+	                        <p><a href="#"></a></p>
+	                    </div>
+	                </div> 
+	            </div> <!-- End Angular FotosController -->                           
+
+	    	</div>
+
+	    	<div class="col-sm-3 sidenav sidenav-style-off" ng-controller="RamaisController"> <!-- Begin Angular FotosController -->	
+	    		<div class="row"> <!-- Begin Busca de Ramais -->                           
+	    			<div class="col-sm-12 sidenav">   	          
+	    				<h3><span class="glyphicon glyphicon-search"></span>&nbsp;&nbsp;Busca de Ramais</h3>
+			    		<input class="form-control" type="text" ng-model="test" ng-minlength="3" placeholder="Digite o nome ou ramal...">
+			    		<select class="form-control select-ramal" multiple="multiple" readonly>
+			    			<option class="dropdown" ng-show="test" ng-repeat="x in names | filter:test">
+        						{{ "&nbsp;&nbsp;" + x.name + " - " + x.number }}
+      						</option>   
+    					</select>
+    				</div>
+    			</div> <!-- End Busca de Ramais -->                           
+			
+			    <div class="row"> <!-- Begin Aniversariantes -->                           
+	    			<div class="col-sm-12 sidenav">   	          
+			   			<h3><span class="glyphicon glyphicon-gift"></span>&nbsp;&nbsp;Aniversariantes</h3>        
+				   		<ul>
+				      		<li><span>10/03</span>&nbsp;&nbsp;&nbsp;Anderson Maia</li>
+				      		<li><span>12/03</span>&nbsp;&nbsp;&nbsp;Patricia Azevedo</li>
+				      		<li><span>18/03</span>&nbsp;&nbsp;&nbsp;Marcelo Farias</li>
+				      		<li><span>23/03</span>&nbsp;&nbsp;&nbsp;Ricardo Santos</li>
+				      		<li><span>27/03</span>&nbsp;&nbsp;&nbsp;Jessica Mendes</li>
+				      		<li><span>27/03</span>&nbsp;&nbsp;&nbsp;Alice Miller</li>
+				      	</ul>  
+				    </div>
+				</div> <!-- End Aniversariantes -->                           
+
+				<div class="row"> <!-- Begin Documentacao -->                           
+		            <div class="col-sm-12 sidenav">
+		            	<h3><span class="glyphicon glyphicon-info-sign"></span>&nbsp;&nbsp;Documentação</h3>
+         				<ul>
+         					<li>Código de Ética & Conduta</li>
+         					<li>Procedimentos & Manuais de TI</li>         					
+         				</ul>
+		            </div>
+		        </div> <!-- End Documentacao -->                           
+
+		    </div> <!-- End Angular FotosController -->      
+	  	</div> 
+	</div>
+
+	<footer class="container-fluid text-center">
+  		<p>Copyright © 2017 - lWeb.com.br</p>
+	</footer>	
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</body>
+</html>
+
